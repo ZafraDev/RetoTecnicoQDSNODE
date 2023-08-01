@@ -22,21 +22,22 @@ export function CoberturaFactory(sequelize: Sequelize): CoberturaStatic {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
-        field: 'ID_Cobertura',
+        field: 'ID_COBERTURA',
       },
       nombre: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-        field: 'Nombre_Cobertura',
+        field: 'NOMBRE_COBERTURA',
       },
       descripcion: {
         type: DataTypes.STRING,
         allowNull: false,
-        field: 'Descripcion',
+        field: 'DESCRIPCION',
       },
     },
     {
+      schema: 'RETOTECNICO',
       freezeTableName: true,
       timestamps: false,
     }

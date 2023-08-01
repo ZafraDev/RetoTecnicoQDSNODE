@@ -4,6 +4,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import './config/database'
 import Routes from './routes'
+import errorMiddleware from './middleware/error.middleware'
 
 class Server {
   public app: express.Application
@@ -25,6 +26,7 @@ class Server {
   private routes (): void {
     const routes = new Routes()
     this.app.use('/api', routes.router)
+    this.app.use(errorMiddleware)
   }
 
   public start (): void {

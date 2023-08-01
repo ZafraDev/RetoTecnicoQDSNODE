@@ -25,3 +25,6 @@ sequelize
 
 export const Cobertura = CoberturaFactory(sequelize);
 export const Seguro = SeguroFactory(sequelize);
+
+Cobertura.hasMany(Seguro, { as: 'seguros', foreignKey: 'ID_COBERTURA' });
+Seguro.belongsTo(Cobertura, { as: 'cobertura', foreignKey: 'ID_COBERTURA' });
