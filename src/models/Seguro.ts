@@ -31,7 +31,6 @@ export function SeguroFactory(sequelize: Sequelize): SeguroStatic {
       nombre: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
         field: 'NOMBRE_SEGURO',
       },
       descripcion: {
@@ -54,7 +53,7 @@ export function SeguroFactory(sequelize: Sequelize): SeguroStatic {
         allowNull: false,
         field: 'DURACION',
       },
-      coberturaId: {
+/*       coberturaId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         field: 'ID_COBERTURA',
@@ -62,7 +61,7 @@ export function SeguroFactory(sequelize: Sequelize): SeguroStatic {
           model: 'COBERTURAS',
           key: 'ID_COBERTURA',
         },
-      },
+      }, */
     },
     {
       schema: 'RETOTECNICO',

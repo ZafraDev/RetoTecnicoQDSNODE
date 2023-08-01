@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "74e4d884-6bd7-463c-9ee8-55e832d205ee",
+		"name": "Reto Tecnico QDS Node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8463446"
+	},
+	"item": [
+		{
+			"name": "getSeguros",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/seguros",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"seguros"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getSeguros",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/seguros",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"seguros"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "863"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35f-UzrtkPNHRI32iAhcqHDqQoKzKVY\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Aug 2023 05:18:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"nombre\": \"Vida Total\",\n            \"descripcion\": \"Cobertura completa de seguro de vida.\",\n            \"precio\": \"500\",\n            \"moneda\": \"PEN\",\n            \"duracion\": \"Anual\",\n            \"ID_COBERTURA\": 1,\n            \"cobertura\": {\n                \"id\": 1,\n                \"nombre\": \"Seguro de Vida\",\n                \"descripcion\": \"Cobertura que protege en caso de fallecimiento.\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"nombre\": \"Salud Basico\",\n            \"descripcion\": \"Cobertura medica basica.\",\n            \"precio\": \"200\",\n            \"moneda\": \"USD\",\n            \"duracion\": \"Mensual\",\n            \"ID_COBERTURA\": 2,\n            \"cobertura\": {\n                \"id\": 2,\n                \"nombre\": \"Seguro de Salud\",\n                \"descripcion\": \"Cobertura medica para gastos de salud.\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"nombre\": \"Auto Terceros\",\n            \"descripcion\": \"Cobertura para danos a terceros.\",\n            \"precio\": \"300\",\n            \"moneda\": \"PEN\",\n            \"duracion\": \"Anual\",\n            \"ID_COBERTURA\": 3,\n            \"cobertura\": {\n                \"id\": 3,\n                \"nombre\": \"Seguro de Automovil\",\n                \"descripcion\": \"Cobertura para danos a vehiculos y terceros.\"\n            }\n        }\n    ],\n    \"message\": \"La solicitud se realizó de manera correcta\",\n    \"status\": 200,\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "getSeguroPorId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/seguros/:seguroId/polizas/clientes",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"seguros",
+						":seguroId",
+						"polizas",
+						"clientes"
+					],
+					"variable": [
+						{
+							"key": "seguroId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getSeguroPorId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/seguros/:seguroId/polizas/clientes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"seguros",
+								":seguroId",
+								"polizas",
+								"clientes"
+							],
+							"variable": [
+								{
+									"key": "seguroId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "598"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"256-c+0huoficQoJcuKwh3IGR9Y23Go\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Aug 2023 05:17:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"nombre\": \"Auto Terceros\",\n        \"descripcion\": \"Cobertura para danos a terceros.\",\n        \"precio\": \"300\",\n        \"moneda\": \"PEN\",\n        \"duracion\": \"Anual\",\n        \"ID_COBERTURA\": 3,\n        \"polizas\": [\n            {\n                \"id\": 3,\n                \"fechaInicio\": \"2023-03-10T00:00:00.000Z\",\n                \"fechaVencimiento\": \"2024-03-10T00:00:00.000Z\",\n                \"estadoPoliza\": \"Activo\",\n                \"ID_SEGURO\": 3,\n                \"ID_CLIENTE\": 3,\n                \"cliente\": {\n                    \"id\": 3,\n                    \"nombre\": \"Carlos Lopez\",\n                    \"direccion\": \"Calle 8, Ica\",\n                    \"correoElectronico\": \"carlos.lopez@example.com\",\n                    \"telefono\": \"999888999\",\n                    \"fechaNacimiento\": \"1988-07-10T00:00:00.000Z\",\n                    \"sexo\": \"M\"\n                }\n            }\n        ]\n    },\n    \"message\": \"La solicitud se realizó de manera correcta\",\n    \"status\": 200,\n    \"success\": true\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3001/api",
+			"type": "string"
+		}
+	]
+}

@@ -1,5 +1,5 @@
 import { Request, NextFunction, Response } from 'express';
-import { getSeguros } from '../service/seguros.service';
+import { getSeguros, getSeguroPorId } from '../service/seguros.service';
 import handleResponse from '../utils/handleResponse';
 
 export const getSegurosController = async (
@@ -14,3 +14,18 @@ export const getSegurosController = async (
     next(err);
   }
 };
+
+export const getSeguroPorIdController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const seguroId = req.params.seguroId
+    const seguro = await getSeguroPorId(+seguroId);
+    handleResponse(res, true, 200, undefined, seguro);
+  } catch (err) {
+    next(err);
+  }
+};
+

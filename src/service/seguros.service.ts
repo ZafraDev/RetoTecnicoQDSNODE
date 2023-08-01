@@ -1,4 +1,5 @@
-import { Seguro, Cobertura } from '../config/database';
+import { Op } from 'sequelize';
+import { Seguro, Cobertura, Cliente, Poliza } from '../config/database';
 import { SeguroModel } from '../models/Seguro';
 
 export const getSeguros = async (): Promise<SeguroModel[]> => {
@@ -11,4 +12,19 @@ export const getSeguros = async (): Promise<SeguroModel[]> => {
     ],
   });
   return seguros;
+};
+
+export const getSeguroPorId = async (
+  seguroId: number
+): Promise<SeguroModel|null> => {
+  const seguro = await Seguro.findByPk(seguroId, {
+    include: [
+      {
+        model: Poliza,
+        as: 'polizas',
+        include: [{ model: Cliente, as: 'cliente' }],
+      },
+    ],
+  });
+  return seguro;
 };

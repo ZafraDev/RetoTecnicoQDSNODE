@@ -27,7 +27,6 @@ export function CoberturaFactory(sequelize: Sequelize): CoberturaStatic {
       nombre: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
         field: 'NOMBRE_COBERTURA',
       },
       descripcion: {
